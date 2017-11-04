@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 
 public class MainActivity extends AppCompatActivity {
     static String TAG="PHONESTATE";
@@ -90,4 +94,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public static class RomReceiver extends BroadcastReceiver {
+  
+        @Override  
+        public void onReceive(Context context, Intent intent) {  
+
+            String action = intent.getAction();
+            String fileName = intent.getExtras().getString("filename");  
+            Log.d("RomRecevier", "接收到action:" + action + "\nfileName:" + fileName);  
+        }
+
+    }
 }

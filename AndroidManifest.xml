@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <receiver android:name=".MainActivity$RomReceiver">  
+            <intent-filter>  
+                 <action android:name="com.android.messaging.datamodel.action.MESSAGE_SAVE_FINISHED"/>  
+            </intent-filter>  
+            <intent-filter>  
+                 <action android:name="com.android.services.callrecorder.RECORD_FINISHED"/>  
+            </intent-filter>  
+        </receiver>  
     </application>
 
 </manifest>
