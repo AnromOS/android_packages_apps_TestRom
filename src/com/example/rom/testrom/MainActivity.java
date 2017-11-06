@@ -98,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
   
         @Override  
         public void onReceive(Context context, Intent intent) {  
-
+            //action:com.android.services.callrecorder.CALL_RECORD_FINISHED
+            //action:com.android.messaging.datamodel.action.MESSAGE_SAVE_FINISHED
             String action = intent.getAction();
             String fileName = intent.getExtras().getString("filename");  
             Log.d("RomRecevier", "接收到action:" + action + "\nfileName:" + fileName);  

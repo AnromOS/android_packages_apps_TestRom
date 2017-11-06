@@ -3,6 +3,8 @@
     package="com.example.rom.testrom">
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_REAL_PHONE_STATE" />
+    <uses-permission android:name="com.android.dialer.CALL_RECORD_FINISHED"/>
+    <uses-permission android:name="com.android.messaging.MESSAGE_SAVE_FINISHED"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,12 +19,12 @@
             </intent-filter>
         </activity>
         
-        <receiver android:name=".MainActivity$RomReceiver">  
+        <receiver android:name=".MainActivity$RomReceiver">
             <intent-filter>  
                  <action android:name="com.android.messaging.datamodel.action.MESSAGE_SAVE_FINISHED"/>  
             </intent-filter>  
             <intent-filter>  
-                 <action android:name="com.android.services.callrecorder.RECORD_FINISHED"/>  
+                 <action android:name="com.android.services.callrecorder.CALL_RECORD_FINISHED"/>  
             </intent-filter>  
         </receiver>  
     </application>
